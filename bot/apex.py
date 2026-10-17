@@ -13,4 +13,11 @@ async def greet(message: Message):
 async def roll(message: Message):
     await message.reply(randint(1, 6))
 print("Bot refreshed successfully")    
+@bot.on.message(text="Вход")
+async def secret_password_handler(message: Message):
+    # Проверяем, что именно написал пользователь после слова "Вход"
+    if message.text == "Вход 1234":
+        await message.answer("Доступ разрешен")
+    else:
+        await message.answer("Неверно!")
 bot.run()
