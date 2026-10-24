@@ -34,5 +34,9 @@ async def count(message: Message):
 async def spy(message: Message):
     Anonymous = [message.text, message.from_id, message.peer_id]
     print(f"-𝜏:2 discovery, {Anonymous}")
+@bot.on.message()
+async def easter(message: Message):
+  if "password" in message.text:
+    await message.reply("I will not tell!")
 bot.run()
 print("Bot refreshed successfully")
